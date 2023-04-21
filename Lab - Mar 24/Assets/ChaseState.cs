@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChaseState : MonoBehaviour
+public class ChaseState : State
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public AttackState attackState;
+    public bool isInAttackRange;
 
-    // Update is called once per frame
-    void Update()
+
+    public override State RunCurrentState()
     {
-        
+        if (isInAttackRange)
+        {
+            return AttackState;
+        }
+        else
+        {
+            return this;
+        }
+    
     }
 }
