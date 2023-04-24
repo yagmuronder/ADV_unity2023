@@ -129,6 +129,7 @@ public class AnimationAndMovementController : MonoBehaviour
     void handleAnimation()
     {
         bool isRunning = animator.GetBool("isRunning");
+        bool isDancing = animator.GetBool("isDancing");
 
         if (isMovementPressed)
         {
@@ -137,6 +138,23 @@ public class AnimationAndMovementController : MonoBehaviour
         else if (!isMovementPressed)
         {
             animator.SetBool("isRunning", false);
+        }
+
+        //at the end of the game (once all the coins have been collected), dance 
+        if (ScoringSystem.theScore >= 18)
+        {
+            animator.SetBool("isDancing", true);
+            if (isMovementPressed)
+            {
+                animator.SetBool("isDancing", false);
+            }
+            else if (!isMovementPressed)
+            {
+                animator.SetBool("isDancing", true);
+            }
+        } else if (ScoringSystem.theScore < 18)
+        {
+            animator.SetBool("isDancing", false);
         }
     }
 
