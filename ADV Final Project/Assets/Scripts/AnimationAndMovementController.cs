@@ -141,7 +141,7 @@ public class AnimationAndMovementController : MonoBehaviour
         }
 
         //at the end of the game (once all the coins have been collected), dance 
-        if (ScoringSystem.theScore >= 18)
+        if (ScoringSystem.theScore >= 19)
         {
             animator.SetBool("isDancing", true);
             if (isMovementPressed)
@@ -152,7 +152,7 @@ public class AnimationAndMovementController : MonoBehaviour
             {
                 animator.SetBool("isDancing", true);
             }
-        } else if (ScoringSystem.theScore < 18)
+        } else if (ScoringSystem.theScore < 19)
         {
             animator.SetBool("isDancing", false);
         }

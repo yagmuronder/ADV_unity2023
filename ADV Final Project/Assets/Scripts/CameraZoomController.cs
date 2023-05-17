@@ -15,7 +15,7 @@ public class CameraZoomController : MonoBehaviour
         int currentScore = ScoringSystem.theScore;
 
         // If the score reaches 16, zoom in on the character
-        if (currentScore >= 18)
+        if (currentScore >= 19)
         {
             CinemachineFramingTransposer framingTransposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
             if (framingTransposer != null)

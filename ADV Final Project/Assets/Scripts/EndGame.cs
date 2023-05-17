@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class EndGame : MonoBehaviour
 {
-    public int totalCoins = 18;
+    public int totalCoins = 20;
     public bool allCoinsCollected = false; //initialize to prevent it from being null
     public Animator animator;
 
